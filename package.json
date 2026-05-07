@@ -1,0 +1,23 @@
+{
+  "name": "incubyte-sm-kata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uma0806/incubyte-sm-kata.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uma0806/incubyte-sm-kata/issues"
+  },
+  "homepage": "https://github.com/uma0806/incubyte-sm-kata#readme",
+  "devDependencies": {
+    "jest": "^30.3.0"
+  }
+}
