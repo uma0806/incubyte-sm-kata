@@ -1,8 +1,3 @@
-// const add = require("../src/stringCalculator");
-
-// test("returns 0 for empty string", () => {
-//   expect(add("")).toBe(0);
-// });
 const add = require("../src/stringCalculator");
 
 test("returns 0 for empty string", () => {
@@ -11,4 +6,8 @@ test("returns 0 for empty string", () => {
 
 test("returns number when single number is passed", () => {
   expect(add("1")).toBe(1);
+});
+
+test("returns sum of two comma-separated numbers", () => {
+  expect(add("1,2")).toBe(3);
 });
