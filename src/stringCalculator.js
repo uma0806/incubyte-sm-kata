@@ -1,31 +1,15 @@
-// function add(numbers) {
-//   if (numbers === "") return 0;
-
-//   //   if (numbers.includes(",")) {
-//   //     return numbers.split(",").reduce((sum, num) => sum + parseInt(num), 0);
-//   //   }
-//   if (numbers.includes(",")) {
-//     return numbers.split(",").reduce((sum, num) => sum + parseInt(num), 0);
-//   }
-
-//   return parseInt(numbers);
-// }
-
-// module.exports = add;
-////////////////////////////////////////
 function add(numbers) {
   if (numbers === "") return 0;
 
-  // Replace new lines with commas
-  numbers = numbers.replace(/\n/g, ",");
+  let delimiter = /,|\n/;
 
-  // Handle multiple comma-separated numbers
-  if (numbers.includes(",")) {
-    return numbers.split(",").reduce((sum, num) => sum + parseInt(num), 0);
+  // Check for custom delimiter
+  if (numbers.startsWith("//")) {
+    delimiter = new RegExp(numbers[2]);
+    numbers = numbers.slice(4);
   }
 
-  // Handle single number
-  return parseInt(numbers);
+  return numbers.split(delimiter).reduce((sum, num) => sum + parseInt(num), 0);
 }
 
 module.exports = add;
