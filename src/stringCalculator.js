@@ -9,7 +9,18 @@ function add(numbers) {
     numbers = numbers.slice(4);
   }
 
-  return numbers.split(delimiter).reduce((sum, num) => sum + parseInt(num), 0);
+  // Convert all numbers into array
+  const nums = numbers.split(delimiter).map(Number);
+
+  // Check for negative numbers
+  const negatives = nums.filter((num) => num < 0);
+
+  if (negatives.length > 0) {
+    throw new Error(`negative numbers not allowed: ${negatives.join(",")}`);
+  }
+
+  // Return sum
+  return nums.reduce((sum, num) => sum + num, 0);
 }
 
 module.exports = add;
